@@ -50,11 +50,12 @@
                     <div class="form-group col-sm-3">
                         <label for="hend">HEND</label>
                         <input required type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Horas extras nocturnas dominicales">
+                        <input name="create" value="1" type="hidden">
                     </div>
                 </div>    
                 <div class="row">
                     <div class="col-sm-12">
-                        <button type="submit">Crear cliente</button>
+                        <button type="submit" class="btn btn-info">Crear cliente</button>
                     </div>
                 </div>            
             </form>

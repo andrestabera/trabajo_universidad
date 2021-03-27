@@ -12,48 +12,54 @@
 </head>
 <body>
     <div class="container">
-        <div>
-            <form action="">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">nombre</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Cedula</label>
-                    <input type="text" class="form-control" id="cedula" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Sueldo</label>
-                    <input type="text" class="form-control" id="sueldo" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Dias</label>
-                    <input type="number" class="form-control" id="dias" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="hed">Horas extras diurnas</label>
-                    <input type="hed" class="form-control" id="hed" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="hen">Horas extras nocturnas</label>
-                    <input type="hen" class="form-control" id="hen" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="hedd">Horas extras diurnas dominicales</label>
-                    <input type="hedd" class="form-control" id="hedd" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <label for="hend">Horas extras nocturnas dominicales</label>
-                    <input type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
+        <div class="pt-1">
+
+            <div>
+                <h3>Ingresar usuario</h3>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">nombre</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="exampleInputEmail1">Cedula</label>
+                        <input type="text" class="form-control" id="cedula" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="exampleInputEmail1">Sueldo</label>
+                        <input type="text" class="form-control" id="sueldo" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="exampleInputEmail1">Dias</label>
+                        <input type="number" class="form-control" id="dias" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="hed">Horas extras diurnas</label>
+                        <input type="hed" class="form-control" id="hed" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="hen">Horas extras nocturnas</label>
+                        <input type="hen" class="form-control" id="hen" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="hedd">Horas extras diurnas dominicales</label>
+                        <input type="hedd" class="form-control" id="hedd" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="hend">Horas extras nocturnas dominicales</label>
+                        <input type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                </div>                
             </form>
         </div>
         <div>

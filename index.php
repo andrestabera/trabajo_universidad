@@ -21,35 +21,35 @@
                 <div class="row">
                     <div class="form-group col-sm-3">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                        <input required type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="exampleInputEmail1">Cedula</label>
-                        <input type="text" class="form-control" id="cedula" aria-describedby="emailHelp" placeholder="Cedula">
+                        <input required type="text" class="form-control" id="cedula" aria-describedby="emailHelp" placeholder="Cedula">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="exampleInputEmail1">Sueldo</label>
-                        <input type="text" class="form-control" id="sueldo" aria-describedby="emailHelp" placeholder="Sueldo">
+                        <input required type="text" class="form-control" id="sueldo" aria-describedby="emailHelp" placeholder="Sueldo">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="exampleInputEmail1">Dias</label>
-                        <input type="number" class="form-control" id="dias" aria-describedby="emailHelp" placeholder="Dias">
+                        <input required type="number" class="form-control" id="dias" aria-describedby="emailHelp" placeholder="Dias">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="hed">HED</label>
-                        <input type="hed" class="form-control" id="hed" aria-describedby="emailHelp" placeholder="Horas extras diurnas">
+                        <input required type="hed" class="form-control" id="hed" aria-describedby="emailHelp" placeholder="Horas extras diurnas">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="hen">HEN</label>
-                        <input type="hen" class="form-control" id="hen" aria-describedby="emailHelp" placeholder="Horas extras nocturnas">
+                        <input required type="hen" class="form-control" id="hen" aria-describedby="emailHelp" placeholder="Horas extras nocturnas">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="hedd">HEDD</label>
-                        <input type="hedd" class="form-control" id="hedd" aria-describedby="emailHelp" placeholder="Horas extras diurnas dominicales">
+                        <input required type="hedd" class="form-control" id="hedd" aria-describedby="emailHelp" placeholder="Horas extras diurnas dominicales">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="hend">HEND</label>
-                        <input type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Horas extras nocturnas dominicales">
+                        <input required type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Horas extras nocturnas dominicales">
                     </div>
                 </div>    
                 <div class="row">
@@ -90,18 +90,21 @@
     <script>
         (function(){
             $("form").submit(function(e){
+                e.preventDefault();
                 console.log("por aqui esta");
 
-                /*var dataString = $(this).serialize();
+                var dataString = $(this).serialize();
         
                 // alert(dataString); return false;
             
                 $.ajax({
                     type: "POST",
-                    url: "bin/process.php",
+                    url: "logica.php",
                     data: dataString,
-                    success: function () {}
-                });*/
+                    success: function () {
+                        console.log("llego de la peticion";)
+                    }
+                });
             });
 
         })();

@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="pt-1">
+        <div class="pt-5">
 
             <div>
                 <h3>Ingresar usuario</h3>
@@ -21,45 +21,42 @@
                 <div class="row">
                     <div class="form-group col-sm-3">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">nombre</small>
+                        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Nombre">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="exampleInputEmail1">Cedula</label>
-                        <input type="text" class="form-control" id="cedula" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="text" class="form-control" id="cedula" aria-describedby="emailHelp" placeholder="Cedula">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="exampleInputEmail1">Sueldo</label>
-                        <input type="text" class="form-control" id="sueldo" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="text" class="form-control" id="sueldo" aria-describedby="emailHelp" placeholder="Sueldo">
                     </div>
                     <div class="form-group col-sm-3">
                         <label for="exampleInputEmail1">Dias</label>
-                        <input type="number" class="form-control" id="dias" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="number" class="form-control" id="dias" aria-describedby="emailHelp" placeholder="Dias">
                     </div>
                     <div class="form-group col-sm-3">
-                        <label for="hed">Horas extras diurnas</label>
-                        <input type="hed" class="form-control" id="hed" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="hed">HED</label>
+                        <input type="hed" class="form-control" id="hed" aria-describedby="emailHelp" placeholder="Horas extras diurnas">
                     </div>
                     <div class="form-group col-sm-3">
-                        <label for="hen">Horas extras nocturnas</label>
-                        <input type="hen" class="form-control" id="hen" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="hen">HEN</label>
+                        <input type="hen" class="form-control" id="hen" aria-describedby="emailHelp" placeholder="Horas extras nocturnas">
                     </div>
                     <div class="form-group col-sm-3">
-                        <label for="hedd">Horas extras diurnas dominicales</label>
-                        <input type="hedd" class="form-control" id="hedd" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="hedd">HEDD</label>
+                        <input type="hedd" class="form-control" id="hedd" aria-describedby="emailHelp" placeholder="Horas extras diurnas dominicales">
                     </div>
                     <div class="form-group col-sm-3">
-                        <label for="hend">Horas extras nocturnas dominicales</label>
-                        <input type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="hend">HEND</label>
+                        <input type="hend" class="form-control" id="hend" aria-describedby="emailHelp" placeholder="Horas extras nocturnas dominicales">
                     </div>
-                </div>                
+                </div>    
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="submit">Crear cliente</button>
+                    </div>
+                </div>            
             </form>
         </div>
         <div>
@@ -89,5 +86,26 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
+        (function(){
+            $("form").submit(function(e){
+                console.log("por aqui esta");
+
+                /*var dataString = $(this).serialize();
+        
+                // alert(dataString); return false;
+            
+                $.ajax({
+                    type: "POST",
+                    url: "bin/process.php",
+                    data: dataString,
+                    success: function () {}
+                });*/
+            });
+
+        })();
+    </script>
+
 </body>
 </html>

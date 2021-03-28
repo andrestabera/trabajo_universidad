@@ -78,7 +78,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                
+                <?php
+                    $empleados = getListaEmpleados();
+                    foreach($empleados as $empleado){ ?>
+                    <tr>
+                        <td><?php echo $empleado["nombre"] ?></td>
+                        <td><?php echo $empleado["cedula"] ?></td>
+                        <td><?php echo $empleado["sueldo"] ?></td>
+                        <td><input id="btn-eliminar" type="button" class="btn btn-danger" value="Eliminar"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>

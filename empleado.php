@@ -9,7 +9,7 @@
         private $hed;
         private $hen;
         private $hedd;
-        private $hedn;
+        private $hend;
         private $basico;
         private $aux_trans;
         private $total_extra;
@@ -27,7 +27,7 @@
         private $int_cesantias;
         private $total_prestaciones;
         
-        public function_construct($cd, $nom, $sueldo, $dias, $hed, $hen, $hedd, $hedn){
+        public function __construct($cd, $nom, $sueldo, $dias, $hed, $hen, $hedd, $hend){
 
             $this->cedula = $cd;
             $this->nombre = $nom;
@@ -36,7 +36,7 @@
             $this->hed = $hed; 
             $this->hen = $hen;
             $this->hedd = $hedd;
-            $this->hedn = $hedn;
+            $this->hend = $hend;
 
         }
 
@@ -96,12 +96,12 @@
             return $this->hedd;
         }
 
-        public function setHedn($hedn){
-            $this->hedn = $hedn;
+        public function setHedn($hend){
+            $this->hend = $hend;
         }
 
-        public function getHedn(){
-            return $this->hedn;
+        public function getHend(){
+            return $this->hend;
         }
 
     }

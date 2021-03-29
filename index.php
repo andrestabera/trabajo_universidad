@@ -1,8 +1,7 @@
 <?php
     include_once ('empleado.php');
-    include_once ('logica.php');
+    include_once ('listar.php');
 
-    $empleados = array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +66,8 @@
                 </div>            
             </form>
         </div>
-        <div>        
+        <div>  
+            <?php if(count($empleados) > 0) { ?>      
             <table class="table">
                 <thead>
                     <tr>
@@ -79,16 +79,20 @@
                 </thead>
                 <tbody>
                 <?php
-                    $empleados = getListaEmpleados();
                     foreach($empleados as $empleado){ ?>
                     <tr>
                         <td><?php echo $empleado["nombre"] ?></td>
                         <td><?php echo $empleado["cedula"] ?></td>
                         <td><?php echo $empleado["sueldo"] ?></td>
-                        <td><input id="btn-eliminar" type="button" class="btn btn-danger" value="Eliminar"></td>
+                        <td>
+                        <form  method="post" id="formulario">
+                            <input type="button" id="<?php echo $empleado['id'] ?>" class="btn btn-danger btn-eliminar" value="Eliminar"></td>                        
+                        </form>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
+            <?php } ?>
         </div>
     </div>    
 
@@ -104,14 +108,25 @@
                     success: function(data) {
                         console.log(data);
                         if(data){
-                            <?php listar(); ?>
+                            location.reload();
                         }
                     }
                 });
             });
 
-            $("#listar").click(function(e){
+            $(".btn-eliminar").click(function(e){
                 e.preventDefault();
+                let idEmpleado = $(this).attr("id");
+                $.ajax({
+                    url: "logica.php",
+                    type: "POST",
+                    data: {id: idEmpleado, eliminar: true},
+                    success: function(data) {
+                        if(data){
+                            location.reload();
+                        }
+                    }
+                });
             });
 
         });

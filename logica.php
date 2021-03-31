@@ -12,12 +12,39 @@
     }
 
     function crearEmpleado($mysqli){
-        /*$empleado = new Empleado($_POST["cedula"],$_POST["nombre"], $_POST["sueldo"], $_POST["dias"],
-        $_POST["hed"], $_POST["hen"], $_POST["hedd"], $_POST["hend"]);*/
 
-        $sentencia = $mysqli->prepare("INSERT INTO empleado (cedula, nombre, sueldo, dias, hed, hen, hedd, hend) values(?,?,?,?,?,?,?,?)");
-        $sentencia->bind_param("ssdiiiii", $_POST["cedula"],$_POST["nombre"], $_POST["sueldo"], $_POST["dias"],
-        $_POST["hed"], $_POST["hen"], $_POST["hedd"], $_POST["hend"]);
+        $cedula = $_POST["cedula"];
+        $nombre = $POST["nombre"];
+        $sueldo = $POST["sueldo"];
+        $dias = $POST["dias"];
+        $hed = (valor_hora * 1.25) * $POST["hed"];
+        $hen = (valor_hora * 1.75) * $POST["hen"];
+        $hedd = (valor_hora * 2) * $POST["hedd"];
+        $hend = (valor_hora * 2.5) * $POST["hend"];
+        $valor_hora = 7500;
+        $basico = $sueldo;
+        $aux_trans = 3428 * $dias;
+        $total_extra = $hed + $hen + $hedd + $hend;
+        $total_devengado = $sueldo + $aux_trans + $total_extra;
+        $salud = $sueldo * 0.004;
+        $pension = $sueldo * 0.004;
+        $arl = $sueldo * 0.00522;
+        $icbf = $sueldo * 0.003;
+        $fondo_solidario = $sueldo * 0.004;
+        $retefuente = $sueldo * 0.025;
+        $total_parafiscales = $salud + $pension + $arl + $icbf + $fondo_solidario + $retefuente;
+        $prima = ($sueldo * $dias)/360;
+        $vacaciones = ($sueldo * $dias)/720;
+        $cesantias = ($sueldo * $dias)/360;
+        $int_cesantias(($cesantias * $dias)*0.12)/360;
+        $total_prestaciones = $prima + $vacaciones + $cesantias + $int_cesantias;
+        
+        $sentencia = $mysqli->prepare("INSERT INTO empleado (cedula, nombre, sueldo, dias, hed, hen, hedd, hend, basico, 
+        aux_trans, total_extra, total_devengado, salud, pension, arl, icbf, fondo_solidario, retefuente, total_parafiscales,
+        prima, vacaciones, cesantias, int_cesantias, total_prestaciones) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $sentencia->bind_param("ssdddddddddddddd", $cedula, $nombre, $sueldo, $dias, $hed, $hen, $hedd, $hend, $basico, 
+        $aux_trans, $total_extra, $total_devengado, $salud, $pension, $arl, $icbf, $fondo_solidario, $retefuente, $total_parafiscales,
+        $prima, $vacaciones, $cesantias, $int_cesantias, $total_prestaciones);
         
         
         if($sentencia->execute()){

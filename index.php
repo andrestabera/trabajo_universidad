@@ -85,9 +85,15 @@
                         <td><?php echo $empleado["cedula"] ?></td>
                         <td><?php echo $empleado["sueldo"] ?></td>
                         <td>
-                        <form  method="post" id="formulario">
-                            <input type="button" id="<?php echo $empleado['id'] ?>" class="btn btn-danger btn-eliminar" value="Eliminar"></td>                        
-                        </form>
+                            <form  method="post" id="formulario">
+                                <input type="button" id="<?php echo $empleado['id'] ?>" class="btn btn-danger btn-eliminar" value="Eliminar">                        
+                            </form>
+                        </td>
+                        <td>
+                            <form  method="post" id="form2">
+                                <input type="button" name="<?php echo $empleado['id'] ?>" class="btn btn-danger btn-ver" value="ver">                        
+                            </form>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -121,6 +127,21 @@
                     url: "logica.php",
                     type: "POST",
                     data: {id: idEmpleado, eliminar: true},
+                    success: function(data) {
+                        if(data){
+                            location.reload();
+                        }
+                    }
+                });
+            });
+
+            $(".btn-ver").click(function(e){
+                
+                let idEmpleado = $(this).attr("name");
+                $.ajax({
+                    url: "ver.php",
+                    type: "POST",
+                    data: {id: idEmpleado},
                     success: function(data) {
                         if(data){
                             location.reload();
